@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-lg-3 col-md-4 col-xs-6 type">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input src="/pets/create/pet/" type="submit" value="Сохранить" />
+    </form>
+<!--    <a class="btn btn-warning" href="/pets/create/pet/" role="button">Пропустить</a>-->
+</div>
+
+{% endblock %}
+{% block add %}
+    <a href="/pets/create/pet/" class="new">Пропустить <br>шаг</a>
+{% endblock %}
+

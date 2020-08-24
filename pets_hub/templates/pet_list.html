@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="block">
+        {% for pet in pets %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <div>
+                    {% if pet.photo %}
+                        <img height="250" width="250" src="{{ pet.photo.url }}" alt="pet_foto">
+                    {% else %}
+                        <p>Фото</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <ul>
+                        <li>Кличка: <a href="{{ pet.id }}/">{{ pet.pet_name }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block add %}
+    <a href="/pets/create/" class="new">Добавить</a>
+{% endblock %}

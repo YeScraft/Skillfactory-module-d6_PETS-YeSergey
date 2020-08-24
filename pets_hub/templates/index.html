@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Добро пожаловать в наш Пето-Хаб.</p>
+    <p>Сейчас на распределении находятся животные в следующем количестве: {{ pets|length }}.</p>
+    <div class="block">
+        {% for pet in pets %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <div>
+                    {% if pet.photo %}
+                        <img height="250" width="250" src="{{ pet.photo.url }}" alt="pet_foto">
+                    {% else %}
+                        <p>Фото</p>
+                    {% endif %}
+                </div>
+                <div><p>{{ pet.pet_name }}</p></div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main-content">
+        <div class="col-lg-4">
+            <a href="#">
+                <img height="500" width="500" src="{{ pet.photo.url }}" alt="pet_foto">
+            </a>
+        </div>
+        <div class="pet-bio-text">
+            <ul>
+                <li>Кличка: {{pet.pet_name}}</li>
+                <li>Возраст: {{pet.age}}</li>
+                <li>Порода: {{pet.pet_type}}</li>
+                <li>О питомце: {{pet.description}}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

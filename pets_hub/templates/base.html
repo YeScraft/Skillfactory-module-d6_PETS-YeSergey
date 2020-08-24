@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Животные &mdash; людям {% block extra_title %}{% endblock extra_title %}</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block bootstrap_header %}
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    {% endblock bootstrap_header %}
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link rel="icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-7.8.9.min.js"></script>
+{% block extra_head %}
+{% endblock extra_head %}
+</head>
+<body>
+  <header>
+    <nav>
+        {% block add %}
+        {% endblock %}
+        <a href="/pets/">Животные</a>
+        <a href="/about/">О нас</a>
+        <a href="/contacts/">Контакты</a>
+        <a href="/">Главная</a>
+    </nav>
+  </header>
+  <main>
+      <div>
+          {% block content %}
+
+          {% endblock %}
+      </div>
+  </main>
+  <footer>
+    <div class="footerwrapper">
+      <p class="footerp">&copy; Copyright @YeSergey 2020, All rights reserved.</p>
+      <div class="footerIMG">
+        <a href=""><img src='{% static "img/Twitter.png" %}' alt="Лого"></a>
+        <a href=""><img src='{% static "img/LinkedIn.png" %}' alt="Лого"></a>
+        <a href=""><img src='{% static "img/Google.png" %}' alt="Лого"></a>
+        <a href=""><img src='{% static "img/Facebook.png" %}' alt="Лого"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
